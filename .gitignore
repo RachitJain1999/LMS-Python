@@ -1,4 +1,6 @@
 # Byte-compiled / optimized / DLL files
+myenb/
+database.py
 __pycache__/
 *.py[cod]
 *$py.class

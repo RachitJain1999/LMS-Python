@@ -1,7 +1,31 @@
-# from sqlalchemy import Columns, In
+from sqlalchemy import Column, Integer, String, ForeignKey, Date
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 
-#Tales
+# Tables
+class Book(Base):
+    __tablename__ = 'books'  # Corrected attribute name
+    id = Column(Integer, primary_key=True)
+    title = Column(String, nullable=False)
+    auther = Column(String, nullable=False)  # Typo: Consider correcting to 'author'
+    isbn = Column(String, nullable=False)
+    count = Column(Integer, nullable=False, default=1)
+
+class Member(Base):
+    __tablename__ = 'members'
+    id = Column(Integer, primary_key=True)
+    name = Column(String, nullable=False)
+    email = Column(String, unique=True, nullable=False)
+
+class Transaction(Base):
+    __tablename__ = 'transactions'
+    id = Column(Integer, primary_key=True)
+    book_id = Column(Integer, ForeignKey('books.id'), nullable=False)
+    member_id = Column(Integer, ForeignKey('members.id'), nullable=False)
+    issue_date = Column(Date, nullable=False)
+    return_date = Column(Date, nullable=False)
+
+    book = relationship('Book')
+    member = relationship('Member')
