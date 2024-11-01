@@ -9,7 +9,7 @@ class Book(Base):
     __tablename__ = 'books'  # Corrected attribute name
     id = Column(Integer, primary_key=True)
     title = Column(String, nullable=False)
-    auther = Column(String, nullable=False)  # Typo: Consider correcting to 'author'
+    auther = Column(String, nullable=False)  
     isbn = Column(String, nullable=False)
     count = Column(Integer, nullable=False, default=1)
 

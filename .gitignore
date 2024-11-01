@@ -1,6 +1,7 @@
 # Byte-compiled / optimized / DLL files
-myenb/
-database.py
+myenv/
+library.db
+
 __pycache__/
 *.py[cod]
 *$py.class
