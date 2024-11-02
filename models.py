@@ -25,7 +25,7 @@ class Transaction(Base):
     book_id = Column(Integer, ForeignKey('books.id'), nullable=False)
     member_id = Column(Integer, ForeignKey('members.id'), nullable=False)
     issue_date = Column(Date, nullable=False)
-    return_date = Column(Date, nullable=False)
+    return_date = Column(Date, nullable=True)
 
     book = relationship('Book')
     member = relationship('Member')

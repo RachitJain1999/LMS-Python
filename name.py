@@ -1,5 +1,5 @@
 
-from crud import add_book, add_member, get_book, get_members
+from crud import add_book, add_member, get_book, get_members, issue_book
 def main():
     print("***********************************")
     print('1. Add Book')
@@ -49,8 +49,12 @@ def main():
             print('-------------------------------')
         
 
-    elif(choice == 5):
-        pass
+    elif(choice == '5'):
+        bookId = input("Enter BookId : ")
+        memeberId  =input("Enter MemberId : ")
+        print('in 5')
+        issue_book(bookId , memeberId)
+
 
     elif(choice == 6):
         pass
