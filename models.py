@@ -9,7 +9,7 @@ class Book(Base):
     __tablename__ = 'books'  # Corrected attribute name
     id = Column(Integer, primary_key=True)
     title = Column(String, nullable=False)
-    auther = Column(String, nullable=False)  
+    author = Column(String, nullable=False)  
     isbn = Column(String, nullable=False)
     count = Column(Integer, nullable=False, default=1)
 
@@ -29,3 +29,4 @@ class Transaction(Base):
 
     book = relationship('Book')
     member = relationship('Member')
+
