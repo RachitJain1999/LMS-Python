@@ -23,6 +23,7 @@ def main():
         print('5. Issue Book')
         print('6. Return Book')
         print('7. View Transactions by Member')
+        print('8. Delete book ')
         print("***********************************")
 
         choice = input("Enter your Choice: ")
@@ -77,7 +78,7 @@ def main():
             return_book(transactionId)
 
 
-        elif choice == "7":
+        elif(choice == '7'):
             getTransactionForMember()
 
         elif(choice == '8'):
